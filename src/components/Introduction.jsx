@@ -10,7 +10,7 @@ const Introduction = () => {
                 type: type,
                 color: color,
                 annotated: true,
-                animationDuration: 900
+                animationDuration: 900,
             });
         }
     };
@@ -30,7 +30,7 @@ const Introduction = () => {
     return (
         <section
             id="about"
-            className="flex flex-col-reverse lg:flex-row items-center gap-8 px-4 sm:px-8 md:px-12 lg:px-16 py-10 sm:py-14"
+            className="flex flex-col-reverse lg:flex-row items-center gap-8 px-4 sm:px-8 md:px-12 lg:px-16 py-10 sm:py-14 tracking-wide"
         >
             {/* Text Section */}
             <div className="flex-1">

@@ -1,7 +1,18 @@
-import React, { useState } from 'react';
-import resume from '../assets/res.pdf'
+import React, { useState, useEffect } from 'react';
+import resume from '../assets/res.pdf';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        const hash = window.location.hash;
+        if (hash) {
+            const element = document.querySelector(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, []);
 
     return (
         <header className="p-2 pt-3 border-b-2 border-gray-200 sticky top-0 bg-white-100 z-10">

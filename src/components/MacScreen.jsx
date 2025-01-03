@@ -15,18 +15,17 @@ const MacScreen = ({ projectInfo }) => {
       </div>
 
       {/* Body Section */}
-      <div
-        className="flex items-center justify-center bg-cover bg-center w-full h-80 relative overflow-hidden text-white-100 px-10"
-        style={{ backgroundImage: `url('${imageUrl}')` }}
-      >
-        <div className='w-full h-full bg-black/80 absolute flex flex-col justify-evenly items-center z-10 opacity-0 transition-opacity duration-300 hover:opacity-100 text-center'>
-          <h4 className='text-white capitalize text-lg md:text-xl lg:text-2xl font-medium'>{projectName}</h4>
-          <p className='text-white text-xs md:text-sm text-balance'>{projectDescription}</p>
-          <a href={link} target='_blank' className='text-white capitalize text-sm font-thin underline'>
-            View Project
-          </a>
+      <a href={link} target='_blank'>
+        <div
+          className="flex items-center justify-center bg-cover bg-center w-full h-80 relative overflow-hidden text-white-100 px-10"
+          style={{ backgroundImage: `url('${imageUrl}')` }}
+        >
+          <div className='w-full h-full bg-black/80 absolute flex flex-col justify-evenly items-center z-10 opacity-0 transition-opacity duration-300 hover:opacity-100 text-center'>
+            <h4 className='text-white capitalize text-lg md:text-xl lg:text-2xl font-medium'>{projectName}</h4>
+            <p className='text-white text-xs md:text-sm text-balance'>{projectDescription}</p>
+          </div>
         </div>
-      </div>
+      </a>
 
     </div>
   );
