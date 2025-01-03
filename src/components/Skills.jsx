@@ -4,7 +4,6 @@ const Skills = () => {
     const slugs = [
         "typescript",
         "javascript",
-        "java",
         "python",
         "c",
         "react",
@@ -15,12 +14,10 @@ const Skills = () => {
         "nextdotjs",
         "prisma",
         "postgresql",
-        "firebase",
         "vercel",
         "git",
         "github",
         "gitlab",
-        "visualstudiocode",
         "figma",
 
     ];
@@ -71,7 +68,7 @@ const Skills = () => {
                     </div>
                 </div>
 
-                <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden px-20 pb-10 flex-shrink-0 ">
+                <div className="relative flex size-full max-w-lg items-center justify-center overflow-hidden px-20 pb-10 flex-shrink-0 cursor-pointer">
                     <IconCloud iconSlugs={slugs} />
                 </div>
             </div>

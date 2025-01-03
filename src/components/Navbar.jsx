@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import resume from '../assets/resume.pdf'
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -29,6 +29,9 @@ const Navbar = () => {
                     <a href="#projects" className="text-gray-500 hover:text-gray-700">
                         Projects
                     </a>
+                    <a href={resume} className='text-gray-500' download="AryanSharmaResume.pdf">
+                        Resume
+                    </a>
                     <a href="#contact" className="text-gray-500 hover:text-gray-700">
                         Contact
                     </a>
@@ -51,6 +54,9 @@ const Navbar = () => {
                         </a>
                         <a href="#projects" onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-700">
                             Projects
+                        </a>
+                        <a href={resume} onClick={() => setIsOpen(false)} className='text-gray-500' download="AryanSharmaResume.pdf">
+                            Resume
                         </a>
                         <a href="#contact" onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-700">
                             Contact

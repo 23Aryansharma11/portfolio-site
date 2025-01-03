@@ -46,18 +46,20 @@ const Introduction = () => {
                         collaborative</span> environments, ensuring my work aligns with the goals and vision of my clients.
                 </p>
                 <p className="text-gray-600 text-sm sm:text-base lg:text-lg mb-6 leading-relaxed">
-                    I am currently looking for a new role as a developer. <span className="font-semibold text-gray-500" id="hire-me">Hire me?</span>
+                    I am currently looking for a new role as a developer. <br /> <span className="font-semibold text-gray-500" id="hire-me">Hire me?</span>
                 </p>
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4">
                     <a
-                        href="#"
+                        href="https://www.linkedin.com/in/aryan-sharma-webdev?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target='_blank'
                         className="py-3 px-6 rounded bg-black text-white-100 text-center text-sm sm:text-base font-medium"
                     >
                         View LinkedIn
                     </a>
                     <a
-                        href="#"
+                        href="https://github.com/23Aryansharma11"
+                        target='_blank'
                         className="py-3 px-6 rounded border-2 border-gray-300 text-gray-500 text-center text-sm sm:text-base font-medium"
                     >
                         View GitHub
