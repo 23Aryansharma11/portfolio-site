@@ -8,7 +8,7 @@ const Contact = lazy(() => import("./components/Contact.jsx"));
 
 const App = () => {
     return (
-        <div className="w-[90%] md:w-[80%] mx-auto min-h-screen bg-white-100 text-black font-rubik">
+        <div className="w-[90%] md:w-[80%] mx-auto min-h-screen bg-white-100 text-black font-rubik scrollbar-hide">
             <Navbar />
             <Introduction />
             <Suspense fallback={<div className="text-xl text-black font-mono tracking-widest h-screen bg-white-100 flex justify-center items-center overflow-hidden uppercase">Aryan Sharma</div>}>
