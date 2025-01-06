@@ -4,7 +4,8 @@
 @tailwind utilities;
 
 body {
-  background-color: #f8f8f8;
+  @apply bg-white-100; /* Default background */
+  @apply dark:bg-dark-100; /* Dark mode background */
 }
 
 @layer base {
