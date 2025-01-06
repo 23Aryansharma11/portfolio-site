@@ -11,7 +11,7 @@ const PhoneEmailForm = ({ myEmail }) => {
     subject: '',
     message: ''
   });
-  const [msg, setMsg] = useState('');
+  const [buttonText, setButtonText] = useState("Send")
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +20,12 @@ const PhoneEmailForm = ({ myEmail }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMsg("Sending...");
+
+    if (!formData.from || !formData.subject || !formData.message) {
+      alert("All fields are mandatory");
+      return;
+    }
+    setButtonText("Sending...")
     const templateParams = {
       from_name: formData.subject,
       from_email: formData.from,
@@ -31,16 +36,12 @@ const PhoneEmailForm = ({ myEmail }) => {
     try {
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
       setFormData({ from: '', subject: '', message: '' });
-      setMsg("✅ Sent");
-      setTimeout(() => {
-        setMsg("");
-      }, 2000);
+      alert("✅ Sent");
+      setButtonText("Send")
     } catch (error) {
       console.error(error);
-      setMsg("❎ Error");
-      setTimeout(() => {
-        setMsg("");
-      }, 2000);
+      alert("❎ Error");
+      setButtonText("Send")
     }
   };
 
@@ -60,6 +61,8 @@ const PhoneEmailForm = ({ myEmail }) => {
               type="email"
               name="from"
               placeholder="Your email"
+              required
+              min={3}
               value={formData.from}
               onChange={handleInputChange}
               className="border border-gray-300 rounded px-2 py-1 text-xs w-full focus:ring-0 focus:outline-none dark:border-gray-500 dark:bg-dark-200 dark:text-gray-200"
@@ -75,6 +78,8 @@ const PhoneEmailForm = ({ myEmail }) => {
             <input
               type="text"
               name="subject"
+              min={3}
+              required
               placeholder="Subject"
               value={formData.subject}
               onChange={handleInputChange}
@@ -83,46 +88,22 @@ const PhoneEmailForm = ({ myEmail }) => {
             <label className="text-sm font-medium text-gray-600 dark:text-gray-300">Message:</label>
             <textarea
               name="message"
+              required
+              min={3}
               placeholder="Write your message here..."
               value={formData.message}
               onChange={handleInputChange}
               className="border border-gray-300 rounded px-2 py-1 text-xs w-full h-20 focus:ring-0 focus:outline-none dark:border-gray-500 dark:bg-dark-200 dark:text-gray-200"
             ></textarea>
           </form>
-          <button type="submit" onClick={(e) => handleSubmit(e)} className="mt-4 bg-[#3A6EA5] text-white-100 py-2 px-6 rounded focus:outline-none focus:ring-0 hover:bg-[#2A5680] dark:bg-blue-700 dark:hover:bg-blue-800">
-            Send
+          <button type="submit" onClick={handleSubmit} className="mt-4 bg-[#3A6EA5] text-white-100 py-2 px-6 rounded focus:outline-none focus:ring-0 hover:bg-[#2A5680] dark:bg-blue-700 dark:hover:bg-blue-800">
+            {buttonText}
           </button>
-          {/* Notification */}
-          {msg && (
-            <div className={`absolute top-[-50px] left-0 w-full text-center text-white bg-white-300 border p-2 rounded-lg font-bold tracking-wider animate-slideInOut`}>
-              {msg}
-            </div>
-          )}
         </div>
 
         {/* Bottom Line (like iPhone's dock area) */}
         <div className="absolute bottom-4 w-[40%] h-1 bg-gray-400 rounded-full"></div>
       </div>
-
-      <style>
-        {`
-          @keyframes slideInOut {
-            0% {
-              top: -50px;
-            }
-            50% {
-              top: 10px;
-            }
-            100% {
-              top: -50px;
-            }
-          }
-
-          .animate-slideInOut {
-            animation: slideInOut 2s forwards ease-out;
-          }
-        `}
-      </style>
     </div>
   );
 };
