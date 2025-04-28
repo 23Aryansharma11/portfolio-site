@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CiMenuBurger, CiMenuFries } from "react-icons/ci";
-import resume from "../assets/res.pdf";
+import resume from "../assets/Aryan_Sharma_Resume.pdf";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 const Navbar = () => {
@@ -29,25 +29,25 @@ const Navbar = () => {
     };
 
     return (
-        <header className="p-2 pt-3 border-b-2 border-gray-200 sticky top-0 bg-white-100 z-10 dark:bg-dark-100">
-            <nav className="flex justify-between items-center">
+        <header className="sticky top-0 z-10 border-b-2 border-gray-200 bg-white-100 p-2 pt-3 dark:bg-dark-100">
+            <nav className="flex items-center justify-between">
                 {/* Logo */}
                 <a href="/" className="">
-                    <h3 className="text-gray-700 text-lg dark:text-white-100">ARYAN SHARMA</h3>
+                    <h3 className="text-lg text-gray-700 dark:text-white-100">ARYAN SHARMA</h3>
                 </a>
 
                 {/* Hamburger Icon */}
-                <div className="flex justify-center items-center gap-1 md:gap-5">
-                    <div className="md:hidden cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+                <div className="flex items-center justify-center gap-1 md:gap-5">
+                    <div className="cursor-pointer md:hidden" onClick={() => setIsOpen(!isOpen)}>
                         {isOpen ? (
-                            <CiMenuFries className="text-gray-500 text-2xl dark:text-white-100" size={20} />
+                            <CiMenuFries className="text-2xl text-gray-500 dark:text-white-100" size={20} />
                         ) : (
-                            <CiMenuBurger className="text-gray-500 text-2xl dark:text-white-100" size={20} />
+                            <CiMenuBurger className="text-2xl text-gray-500 dark:text-white-100" size={20} />
                         )}
                     </div>
 
                     {/* Navigation Links */}
-                    <section className="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-5">
+                    <section className="hidden flex-col space-y-2 md:flex md:flex-row md:space-x-5 md:space-y-0">
                         <a href="#about" className="text-gray-500 hover:text-gray-700 dark:text-gray-200 dark:hover:text-white-100">
                             About
                         </a>
@@ -77,13 +77,13 @@ const Navbar = () => {
                         {/* Hamburger Icon for Mobile */}
                         {isOpen && (
                             <motion.div
-                                className="absolute top-12 right-4 w-48 bg-white-100 shadow-lg rounded-lg z-20 dark:bg-dark-200"
+                                className="absolute right-4 top-12 z-20 w-48 rounded-lg bg-white-100 shadow-lg dark:bg-dark-200"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.8 }}
                                 transition={{ type: "spring", stiffness: 200, damping: 20 }}
                             >
-                                <div className="flex flex-col p-4 space-y-3">
+                                <div className="flex flex-col space-y-3 p-4">
                                     <a
                                         href="#about"
                                         onClick={() => setIsOpen(false)}
