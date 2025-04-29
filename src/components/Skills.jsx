@@ -1,7 +1,8 @@
 import IconCloud from "../components/ui/icon-cloud";
 import { motion } from "framer-motion";
 import { MdDownload } from "react-icons/md";
-import resume from "../assets/Aryan_Sharma_Resume.pdf";
+import resume from "../assets/resume.pdf";
+
 
 const Skills = () => {
   const slugs = [

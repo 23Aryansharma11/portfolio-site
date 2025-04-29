@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CiMenuBurger, CiMenuFries } from "react-icons/ci";
-import resume from "../assets/Aryan_Sharma_Resume.pdf";
+import resume from "../assets/resume.pdf";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 const Navbar = () => {
