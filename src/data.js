@@ -1,6 +1,14 @@
 export const projects = [
   {
     imageUrl:
+      "https://res.cloudinary.com/alumni-portal-dev/image/upload/v1746674961/Screenshot_08-May_08-58-59_12638_ez7iwb.png",
+    link: "https://github.com/23Aryansharma11/scale-chat",
+    projectName: "Scale Chat",
+    projectDescription:
+      "This project is a proof-of-concept (PoC) for a scalable, real-time chat application backend architecture. It showcases how to combine Express.js, Apache Kafka, and Redis to build an event-driven system that can handle high-throughput messaging with low latency.",
+  },
+  {
+    imageUrl:
       "https://res.cloudinary.com/alumni-portal-dev/image/upload/f_auto,q_auto/v1/portfolio/rejoice",
     link: "https://rejoiceindia.github.io/astro-site/",
     projectName: "Rejoice Real Estate",
